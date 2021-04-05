@@ -6,7 +6,14 @@ namespace ConsoleAppIRepository
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            IRepository db = new MySqlRepository();
+
+            foreach (string car in db.GetCars())
+            {
+                Console.WriteLine(car);
+            }
+
+            Console.ReadKey();
         }
     }
 }
